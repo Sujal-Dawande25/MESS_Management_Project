@@ -1,0 +1,167 @@
+/* Common styles for all screen sizes */
+body {
+    text-align: center;
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Styles for the payment container */
+.payment-container {
+    display: inline;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+/* Styles for the payment form */
+.payment-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 1.5rem;
+}
+
+/* Styles for text, number, and password input fields */
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 1.5rem;
+}
+
+/* Styles for buttons */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #8C55AA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 1.5rem;
+}
+
+/* Styles for success message */
+.message {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+    display: none;
+}
+
+/* Styles for the first set of code */
+.container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bacbc3;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#main {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 3%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.error-message {
+    color: red;
+}
+
+.form-group label,
+.form-group input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.container {
+    background-color: #FFFFFF;
+    width: 400px;
+    height: auto;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.form-group {
+    width: 76%;
+    color: rgb(74, 92, 92);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid rgba(134, 36, 36, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+form {
+    margin: 20px;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.options {
+    display: none;
+}
+
+.options label {
+    display: inline-block;
+    margin-right: 10px;
+}

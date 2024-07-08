@@ -1,0 +1,202 @@
+/* Common styles for all screen sizes */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Background color */
+}
+.title h1{
+    text-align: center;
+    color:  #8C55AA
+}
+
+.pricing-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.plan {
+    background-color:  #F3EBF6; /* Plan background color */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan h2 {
+    color:  #8C55AA; /* Plan title color */
+}
+
+.price {
+    font-size: 24px;
+    color: #FF5733; /* Price color */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color:  #8C55AA; /* Button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555; /* Button color on hover */
+}
+.page-header {
+    background-color: #cb6ce6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header img {
+    max-width: 100px; /* Adjust the maximum width of the logo as needed */
+    height: auto;
+    border-radius: 50%;
+    
+}
+
+.page-header .header-right a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 100px; /* Adjust the spacing between buttons */
+    font-size: 150%;
+}
+
+    
+
+.page-header .header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .plan {
+        margin: 20px 0;
+    }
+}
+.page-footer {
+    background-color: #cb6ce6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Set position to fixed */
+    bottom: 0; /* Place at the bottom of the viewport */
+    width: 100%; /* Occupy full width */
+}
+
+footer {
+    background-color: #cb6ce6; /* Footer background color */
+    color: #fff; /* Footer text color */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content {
+    background-color: #fff; /* Background color for the content area */
+    padding: 20px; /* Add padding to provide space around the content */
+    border-radius: 10px; /* Add rounded corners to the content box */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+.about-content h1 {
+    text-align: center;
+    color: #8C55AA; /* Heading color */
+}
+
+.about-content li {
+    font-size: 18px; /* Font size for paragraphs */
+    line-height: 1.5; /* Line height for better readability */
+    color: #333; /* Text color */
+}
+
+.about-content a {
+    color: #8C55AA; /* Link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-content a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+.contact-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content h1 {
+    text-align: center;
+    color: #8C55AA;
+}
+
+.contact-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info a {
+    color: #8C55AA;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+h1{
+    text-align: center;
+    margin: 80px;
+    color: #cb6ce6;
+}
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.error-message {
+    text-align: center;
+    color: red;
+}
+
+

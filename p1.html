@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        body {
+            
+            text-align: center;
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
+
+        }
+
+        .payment-container {
+            display: inline;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 50px;
+            
+        }
+
+        .payment-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 1.5rem;
+        }
+
+        input[type="text"], input[type="number"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 1.5rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #8C55AA;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 1.5rem;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Select Payment Method:</h2>
+        <label>
+            <input type="radio" name="paymentMethod" value="upi" id="upiRadio"> UPI
+        </label>
+        <label>
+            <input type="radio" name="paymentMethod" value="card" id="cardRadio"> Card
+        </label><br><br>
+
+        <div class="payment-form" id="upiPaymentForm">
+            <h2>UPI Payment</h2>
+            <input type="text" id="upiId" placeholder="UPI ID (e.g., 1234567890@text)" required>
+            <button id="upiPayButton">Pay</button>
+        </div><br><br>
+
+        <div class="payment-form" id="cardPaymentForm">
+            <h2>Card Payment</h2>
+            <input type="text" id="cardNumber" placeholder="Card Number (e.g., 1234/5678/9012)" required>
+            <input type="text" id="cardName" placeholder="Cardholder Name" required>
+            <input type="text" id="cardExpiry" placeholder="Expiry (MMYY)" required>
+            <input type="password" id="cardCVV" placeholder="CVV" required>
+            <button id="cardPayButton">Pay </button>
+        </div>
+
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        const upiRadio = document.getElementById("upiRadio");
+        const cardRadio = document.getElementById("cardRadio");
+        const upiPaymentForm = document.getElementById("upiPaymentForm");
+        const cardPaymentForm = document.getElementById("cardPaymentForm");
+        const cardNumberInput = document.getElementById("cardNumber");
+        const cardExpiryInput = document.getElementById("cardExpiry");
+        const cardCVVInput = document.getElementById("cardCVV");
+
+        upiRadio.addEventListener("change", function () {
+            if (upiRadio.checked) {
+                upiPaymentForm.style.display = "block";
+                cardPaymentForm.style.display = "none";
+            }
+        });
+
+        cardRadio.addEventListener("change", function () {
+            if (cardRadio.checked) {
+                cardPaymentForm.style.display = "block";
+                upiPaymentForm.style.display = "none";
+            }
+        });
+
+        cardNumberInput.addEventListener("input", function () {
+            const cleanedValue = cardNumberInput.value.replace(/[^0-9]/g, '').substring(0, 12);
+            let formattedValue = '';
+            for (let i = 0; i < cleanedValue.length; i += 4) {
+                formattedValue += cleanedValue.substr(i, 4);
+                if (i + 4 < cleanedValue.length) {
+                    formattedValue += '/';
+                }
+            }
+            cardNumberInput.value = formattedValue;
+        });
+
+        cardExpiryInput.addEventListener("input", function () {
+            const cleanedValue = cardExpiryInput.value.replace(/[^0-9]/g, '').substring(0, 4);
+            let formattedValue = '';
+            for (let i = 0; i < cleanedValue.length; i += 2) {
+                formattedValue += cleanedValue.substr(i, 2);
+                if (i + 2 < cleanedValue.length) {
+                    formattedValue += '/';
+                }
+            }
+            cardExpiryInput.value = formattedValue;
+        });
+
+        cardCVVInput.addEventListener("input", function () {
+            const cleanedValue = cardCVVInput.value.replace(/[^0-9]/g, '').substring(0, 3); // Assuming CVV is 3 digits
+            cardCVVInput.value = cleanedValue;
+        });
+    </script>
+</body>
+</html>

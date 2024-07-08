@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="daily.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Revenue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background: #cb6ce6;
+            width: 100%;
+            padding: 10px 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .nav {
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            list-style-type: none;
+        }
+
+        .nav-item {
+            cursor: pointer;
+            /* font-weight: bold; */
+            margin-right: 20px;
+            color: #fff;
+        }
+        .nav-item a {
+    cursor: pointer;
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none; /* Remove the underline */
+         }
+
+        .sub-menu-wrap {
+            position: absolute;
+            top: 100%;
+            right: 50%;
+            width: 320px;
+            max-height: 0px;
+            overflow: hidden;
+            transition: max-height 0.5s;
+        }
+
+        .sub-menu-wrap.open-menu {
+            max-height: 400px;
+        }
+
+        .sub-menu {
+            background: #fff;
+            padding: 20px;
+            margin: 10px;
+        }
+        .sub-menu-link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #525252;
+        margin: 12px 0;
+        position: relative;
+    }
+    .sub-menu-link p {
+        width: 100%;
+        font-weight: normal;
+        /* text-decoration: none; Change from bold to normal */
+    }
+
+
+    .sub-menu-text {
+        margin-left: 15px;
+    }
+    .sub-menu-link span {
+        margin-left: 10px; /* Adjust the margin as needed */
+        transition: transform 0.5s;
+    }
+    .sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+}
+
+
+        
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+            font-family: 'Ubuntu', sans-serif;
+            padding-top: 0px;
+            color: #8C55AA;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #8C55AA;
+            color: #fff;
+            padding: 20px;
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            padding-top: 40px;
+            color: #8C55AA;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 76%;
+            color: rgb(0, 0, 0);
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 1px;
+            background: rgba(39, 17, 168, 0.04);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            box-sizing: border-box;
+            border: 3px solid rgba(62, 7, 7, 0.02);
+            margin-bottom: 50px;
+            margin-left: 46px;
+            text-align: center;
+            margin-bottom: 27px;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        button {
+            background-color: #8C55AA;
+            ;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 1.5em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        table,
+        th,
+        td {
+            border: solid;
+            border-radius: 1;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+            border-color: #8C55AA;
+        }
+
+        th {
+            background-color: #8C55AA;
+            ;
+            color: #fff;
+        }
+
+        #totalRevenue {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .page-header {
+            background-color: #cb6ce6;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-header img {
+            max-width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .page-header .header-right a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 100px;
+            font-size: 150%;
+        }
+
+        .page-header .header-right a:hover {
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            background-color: #cb6ce6;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer {
+            background-color: #cb6ce6;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function addCustomerEntry() {
+            var table = document.getElementById("customerTable");
+            var customerNumber = document.getElementById("customerNumber").value;
+            var amount = parseFloat(document.getElementById("amount").value);
+
+            if (isNaN(amount)) {
+                alert("Please enter a valid amount.");
+                return;
+            }
+
+            var newRow = table.insertRow(-1);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+
+            cell1.innerHTML = customerNumber;
+            cell2.innerHTML = "Rs " + amount.toFixed(2);
+
+            document.getElementById("customerNumber").value = "";
+            document.getElementById("amount").value = "";
+            calculateTotalAmount();
+        }
+
+        function calculateTotalAmount() {
+            var table = document.getElementById("customerTable");
+            var rowCount = table.rows.length;
+            var totalAmount = 0;
+
+            for (var i = 0; i < rowCount; i++) {
+                var row = table.rows[i];
+                var amountCell = row.cells[1];
+                var amountText = amountCell.textContent || amountCell.innerText;
+                var amount = parseFloat(amountText.replace("Rs ", "").trim());
+
+                if (!isNaN(amount)) {
+                    totalAmount += amount;
+                }
+            }
+
+            document.getElementById("totalAmount").textContent = "Total Amount: Rs " + totalAmount.toFixed(2);
+        }
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+           
+        }
+
+        function showSubMenu() {
+            subMenu.classList.add("open-menu");
+            window.location.href = "attendance_page1.php";
+        }
+
+        function hideSubMenu() {
+            subMenu.classList.remove("open-menu");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            subMenu = document.getElementById("subMenu");
+            let attendanceNavItem = document.getElementById("attendanceNavItem");
+            attendanceNavItem.addEventListener("click", toggleMenu);
+
+            // Attach event listeners to submenu links
+            let oneTimeLink = document.getElementById("oneTimeLink");
+            let twoTimeLink = document.getElementById("twoTimeLink");
+
+            oneTimeLink.addEventListener("click", function () {
+                window.location.href = "one_time_attendance.php"; // Change the URL accordingly
+            });
+
+            twoTimeLink.addEventListener("click", function () {
+                window.location.href = "two_time_attendance.php"; // Change the URL accordingly
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+            <img src="image/sah1.png" alt="logo" class="logo">
+            <ul class="nav">
+                <li class="nav-item" id="attendanceNavItem">Attendance</li>
+                <li class="nav-item"><a href="one.php">One Time</a></li>
+                <li class="nav-item"><a href="two.php">Two Time</a></li>
+                <li class="nav-item"><a href="details.php">All Records</a></li>
+                <li class="nav-item"><a href="payment_one_details.php">Payment details of One</a></li>
+                <li class="nav-item"><a href="payment_two.details.php">Payment details of two</a></li>
+                <li class="nav-item"><a href="login1.php".php">Logout</a></li>
+
+            </ul>
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <hr>
+                    <a href="one_attendance.php" class="sub-menu-link">
+                        <img src="image/profile.png" alt="profileimage">
+                        <p>One Time Attendance</p>
+                        <span> ></span>
+                    </a>
+                    <a href="two_attendance.php" class="sub-menu-link">
+                        <img src="image/profile.png" alt="profileimage">
+                        <p>Two Time Attendance</p>
+                        <span> ></span>
+                    </a>
+                    <a href="login1.php" class="sub-menu-link">
+                        <img src="image/logout.png" alt="profileimage">
+                        <p>Logout</p>
+                        <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <form>
+        <label for="customerNumber">Customer Number:</label>
+        <input class="un" type="text" id="customerNumber" name="customerNumber" placeholder="customer Number" required><br><br>
+        <label for="amount">Amount:</label>
+        <input class="pass" type="text" step="0.01" id="amount" name="amount" placeholder="Amount" required><br><br>
+        <button type="button" onclick="addCustomerEntry()">Add Customer Entry</button>
+    </form>
+
+    <h2>Customer Entries</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Customer Number</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="customerTable"></tbody>
+    </table><br>
+    <center>
+        <b><br><div id="totalAmount"></div></b>
+    </center>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 S.a.H Mess Company...</p>
+        </div>
+    </footer>
+</body>
+
+</html>

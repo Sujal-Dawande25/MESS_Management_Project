@@ -1,0 +1,80 @@
+body {
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.details-heading {
+    color: #8C55AA;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.details-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.details-table th, .details-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.details-table th {
+    background-color: #f2f2f2;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* New CSS class for the verified button */
+.verified {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: not-allowed; /* Change cursor to not-allowed after verification */
+}
+.back-button {
+    text-align: left; /* Center the button */
+    margin-bottom: 0px;
+    margin-top: 20px; /* Add some space below the button */
+}
+
+.back-button a {
+    display: inline-block; /* Ensure the link behaves as a block element */
+    background-color: #8C55AA; /* Purple color */
+    color: #FFFFFF; /* White color for text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 20px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.back-button a:hover {
+    background-color: #634183; /* Darker purple on hover */
+}
+.details-heading {
+    color: #8C55AA;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 10px; /* Reduce the margin to align with the back button */
+}.header {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Align items with space between them */
+    align-items: center; /* Align items vertically */
+}

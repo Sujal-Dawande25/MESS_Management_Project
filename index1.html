@@ -1,0 +1,97 @@
+<!-- File: combined.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Include your existing styles -->
+    
+    <style>
+        /* Add your additional styling here */
+        .nav-item {
+            cursor: pointer;
+        }
+
+        .sub-menu-wrap {
+            display: none;
+        }
+
+        .sub-menu-wrap.open-menu {
+            display: block;
+        }
+        .nav {
+            align-items:flex-end;
+            display: flex;
+            /* justify-content: space-between; */
+        }
+
+
+        /* Add other necessary styles */
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <nav>
+        <!-- Remove the user logo and add the "Attendance" item -->
+        <div class="nav-item" id="attendance">Attendance</div>
+
+        <ul>
+            <!-- Add other menu items as needed -->
+        </ul>
+
+        <!-- <img src="image/Passport.jpg" alt="user-pic" class="user-pic" onclick="toggleMenu()"> -->
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                
+                <hr>
+                <a href="#" class="sub-menu-link">
+                    <img src="image/profile.png" alt="profileimage">
+                    <p>One Time Attendane</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="image/profile.png" alt="profileimage">
+                    <p>Two Time Attendance</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                    <img src="image/logout.png" alt="profileimage">
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+                <!-- Add other sub-menu links as needed -->
+            </div>
+        </div>
+    </nav>
+   
+</div>
+
+<script>
+    // JavaScript to handle the toggleMenu function remains unchanged
+
+    // Add JavaScript to show/hide dropdown on clicking "Attendance"
+    let attendanceNavItem = document.getElementById("attendance");
+    let subMenu = document.getElementById("subMenu");
+
+    attendanceNavItem.addEventListener("click", function() {
+        subMenu.classList.toggle("open-menu");
+    });
+</script>
+
+<footer>
+    <div class="footer-content">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2023 S.a.H Mess Company...</p>
+    </div>
+</footer>
+
+</body>
+</html>

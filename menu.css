@@ -1,0 +1,29 @@
+.menu-container {
+    display: flex;
+    justify-content: space-around; /* or 'space-between' based on your preference */
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.menu-card {
+    width: 200px; /* Adjust the width as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-card h3 {
+    color: #333;
+}
+
+.menu-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-card li {
+    margin-bottom: 8px;
+}

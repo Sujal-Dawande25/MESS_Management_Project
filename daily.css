@@ -1,0 +1,173 @@
+/* Style for the body */
+body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    border-radius: 1.5em;
+    box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+    font-family: 'Ubuntu', sans-serif;
+
+    padding-top: 0px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    
+}
+
+/* Style for the header */
+h1 {
+    text-align: center;
+    background-color: #8C55AA;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Style for the form */
+form {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+
+    padding-top: 40px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 76%;
+color: rgb(0, 0, 0);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(39, 17, 168, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 3px solid rgba(62, 7, 7, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+    background-color: #8C55AA;;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Style for the table */
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    /*border-radius: 1.5em;*/
+}
+
+table, th, td {
+    border:solid ;
+    border-radius: 1;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-color: #8C55AA;
+}
+
+th {
+    background-color: #8C55AA;;
+    color: #fff;
+}
+
+/* Style for the total revenue display */
+#totalRevenue {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+input[type="Number"]::placeholder {
+    text-align: center;
+    font-weight: bold;
+    font: size 20px; 
+}
+.page-header {
+    background-color: #cb6ce6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header img {
+    max-width: 100px; /* Adjust the maximum width of the logo as needed */
+    height: auto;
+    border-radius: 50%;
+    
+}
+
+.page-header .header-right a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 100px; /* Adjust the spacing between buttons */
+    font-size: 150%;
+}
+
+    
+
+.page-header .header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+
+@media screen and (max-width: 768px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+    .page-footer {
+        background-color: #cb6ce6;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer {
+        background-color: #cb6ce6; /* Footer background color */
+        color: #fff; /* Footer text color */
+        text-align: center;
+        padding: 20px 0;
+    }
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+
